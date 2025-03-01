@@ -15,7 +15,7 @@ require_once('connectdb.php');
 
 $query = "SELECT name FROM events";
 
-$result = $conn->query($sql);
+$result = $con->query($sql);
 
 $events = [];
 while ($row = $result->fetch_assoc()) {
