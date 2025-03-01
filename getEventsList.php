@@ -16,14 +16,15 @@ require_once('connectdb.php');
 $query = "SELECT name FROM events";
 
 $result = $con->query($query);
+system(print ($result));
 
-$events = [];
+//$events = [];
 // while ($row = $result->fetch_assoc()) {
 //     $events[] = $row;
 // }
 
 echo json_encode($events);
 
-$con->close();
+// $con->close();
 
 ?>
