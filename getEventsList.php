@@ -18,9 +18,9 @@ $query = "SELECT name FROM events";
 $result = $con->query($query);
 
 $events = [];
-while ($row = $result->fetch_assoc()) {
-    $events[] = $row;
-}
+// while ($row = $result->fetch_assoc()) {
+//     $events[] = $row;
+// }
 
 echo json_encode($events);
 
