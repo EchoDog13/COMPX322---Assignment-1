@@ -24,6 +24,6 @@ $events = [];
 
 echo json_encode($events);
 
-$conn->close();
+$con->close();
 
 ?>
