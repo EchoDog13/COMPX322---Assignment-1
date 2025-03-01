@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -26,4 +26,19 @@ echo json_encode($events);
 
 // $con->close();
 
+?> -->
+
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include 'connectdb.php'; // Include the PDO connection
+
+$sql = "SELECT name FROM events";
+$stmt = $con->query($sql); // Execute query
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    echo "ID: " . $row["id"] . " - Name: " . $row["name"] . "<br>";
+}
 ?>
