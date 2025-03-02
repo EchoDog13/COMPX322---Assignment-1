@@ -39,6 +39,6 @@ $sql = "SELECT name FROM events";
 $stmt = $con->query($sql); // Execute query
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo "ID: " . $row["id"] . " - Name: " . $row["name"] . "<br>";
+    echo $row["name"] . "<br>";
 }
 ?>
