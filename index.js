@@ -5,6 +5,8 @@ function getEventsList() {
     let data = asyncRequest.responseText;
     let content = document.getElementById("testArea");
     content.innerHTML = data;
+
+    console.log(data);
   };
   let handleError = () => {
     console.error("Error: could not retrieve data");
