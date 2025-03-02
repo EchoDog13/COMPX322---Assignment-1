@@ -2,7 +2,7 @@ function getEventsList() {
   asyncRequest = new XMLHttpRequest();
   asyncRequest.onload = showData;
   asyncRequest.onerror = handleError;
-  asyncRequest.open("GET", url);
+  asyncRequest.open("GET", getEventsList.php);
   asyncRequest.send();
 
   let showData = () => {
@@ -14,3 +14,5 @@ function getEventsList() {
     console.error("Error: could not retrieve data");
   };
 }
+
+document.addEventListener("DOMContentLoaded", getEventsList);
