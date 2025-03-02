@@ -6,7 +6,7 @@ function getEventsList() {
     let content = document.getElementById("testArea");
     content.innerHTML = data;
 
-    console.log(data);
+    console.log(data.toString());
   };
   let handleError = () => {
     console.error("Error: could not retrieve data");
