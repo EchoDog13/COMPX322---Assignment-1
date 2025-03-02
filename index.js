@@ -13,7 +13,7 @@ function getEventsList() {
 
   asyncRequest.onload = showData;
   asyncRequest.onerror = handleError;
-  asyncRequest.open("GET", getEventsList.php);
+  asyncRequest.open("GET", "getEventsList.php");
   asyncRequest.send();
 }
 
