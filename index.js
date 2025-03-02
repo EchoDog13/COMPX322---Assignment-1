@@ -1,20 +1,24 @@
 function getEventsList() {
-  asyncRequest = new XMLHttpRequest();
+  let asyncRequest = new XMLHttpRequest(); // Declare variable properly
 
-  let showData = () => {
-    let data = asyncRequest.responseText;
-    let content = document.getElementById("testArea");
-    content.innerHTML = data;
+  asyncRequest.onload = () => {
+    if (asyncRequest.status === 200) {
+      // Check if request was successful
+      let data = JSON.parse(asyncRequest.responseText); // Parse JSON
 
-    console.log(data.toString());
+      let content = document.getElementById("testArea");
+      content.innerHTML = data.map((event) => `<p>${event.name}</p>`).join(""); // Display event names
+
+      console.log(data); // Log the JSON data
+    } else {
+      console.error("Error: " + asyncRequest.status);
+    }
   };
-  let handleError = () => {
-    console.error("Error: could not retrieve data");
-  };
 
-  asyncRequest.onload = showData;
-  asyncRequest.onerror = handleError;
-  asyncRequest.open("GET", "getEventsList.php");
+  asyncRequest.onerror = () =>
+    console.error("Network error: Could not retrieve data");
+
+  asyncRequest.open("GET", "getEventsList.php", true); // Ensure async=true
   asyncRequest.send();
 }
 
