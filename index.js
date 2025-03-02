@@ -7,6 +7,7 @@ function getEventsList() {
 
   let showData = () => {
     let data = asyncRequest.responseText;
+    console.log(data);
     let content = document.getElementById("testArea");
     content.innerHTML = data;
   };
