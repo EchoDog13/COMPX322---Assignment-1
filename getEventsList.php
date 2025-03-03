@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 include 'connectdb.php'; // Include the PDO connection
 
-$sql = "SELECT name FROM events";
+$sql = "SELECT `name`, `id` FROM events";
 $result = $con->query($sql);
 
 $events = []; // Store results in an array
