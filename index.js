@@ -1,37 +1,28 @@
 function getEventsList() {
-  let asyncRequest = new XMLHttpRequest(); // Declare variable properly
+  let asyncRequest = new XMLHttpRequest();
 
   asyncRequest.onload = () => {
     if (asyncRequest.status === 200) {
-      // Check if request was successful
+      let eventContainer = document.getElementById("eventList");
 
-      document.addEventListener("DOMContentLoaded", function () {
-        let eventContainer = document.getElementById("eventList");
+      let events = JSON.parse(asyncRequest.responseText); // Parse JSON
 
-        let events = JSON.parse(asyncRequest.responseText); // Parse JSON
+      // Insert events into the container
+      eventContainer.innerHTML = events
+        .map(
+          (event) =>
+            `<div class="event-item" data-id="${event.id}">${event.name}</div>`
+        )
+        .join("");
 
-        eventContainer.innerHTML = events
-          .map(
-            (event) =>
-              `<div class="event-item" data-id="${event.id}">${event.name}</div>`
-          )
-          .join("");
-      });
-
+      // Use event delegation for clicks
       eventContainer.addEventListener("click", function (event) {
         let target = event.target;
 
         if (target.classList.contains("event-item")) {
           let eventId = target.getAttribute("data-id");
-          alert(`Clicked on event: ${event.name}`);
+          alert(`Clicked on event ID: ${eventId}`);
         }
-      });
-
-      events.array.forEach((element) => {
-        let eventElement = document.createElement("div");
-        eventElement.textContent = element.name;
-        eventElement.classList.add("event-item");
-        eventElement.setAttribute("id", element.id);
       });
     }
   };
@@ -39,8 +30,9 @@ function getEventsList() {
   asyncRequest.onerror = () =>
     console.error("Network error: Could not retrieve data");
 
-  asyncRequest.open("GET", "getEventsList.php", true); // Ensure async=true
+  asyncRequest.open("GET", "getEventsList.php", true);
   asyncRequest.send();
 }
 
+// Load events once the DOM is ready
 document.addEventListener("DOMContentLoaded", getEventsList);
