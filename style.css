@@ -1,4 +1,14 @@
-.event-item{
-    padding: 10px;
-    background-color: cadetblue;
+.event-item {
+    padding: 15px;
+    background-color: orange;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
