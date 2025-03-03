@@ -4,7 +4,28 @@ function getEventsList() {
   asyncRequest.onload = () => {
     if (asyncRequest.status === 200) {
       // Check if request was successful
-      let events = JSON.parse(asyncRequest.responseText); // Parse JSON
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let eventContainer = document.getElementById("eventList");
+
+        let events = JSON.parse(asyncRequest.responseText); // Parse JSON
+
+        eventContainer.innerHTML = events
+          .map(
+            (event) =>
+              `<div class="event-item" data-id="${event.id}">${event.name}</div>`
+          )
+          .join("");
+      });
+
+      eventContainer.addEventListener("click", function (event) {
+        let target = event.target;
+
+        if (target.classList.contains("event-item")) {
+          let eventId = target.getAttribute("data-id");
+          alert(`Clicked on event: ${event.name}`);
+        }
+      });
 
       events.array.forEach((element) => {
         let eventElement = document.createElement("div");
