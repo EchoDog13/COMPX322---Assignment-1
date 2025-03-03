@@ -1,3 +1,20 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: lightgray;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Optional: Adds space between items */
+}
+
 .event-item {
     padding: 15px;
     background-color: orange;
@@ -6,6 +23,7 @@
     color: white;
     font-family: Arial, sans-serif;
     transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1 1 calc(33.333% - 30px); /* Adjust the width as needed */
 }
 
 .event-item:hover {
