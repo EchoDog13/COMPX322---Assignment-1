@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", getEventsList);
+
 function getEventsList() {
   let asyncRequest = new XMLHttpRequest();
 
@@ -32,11 +34,9 @@ function getEventsList() {
 
   asyncRequest.open("GET", "getEventsList.php", true);
   asyncRequest.send();
-  fetchEventDetails(2);
 }
 
 function fetchEventDetails(eventId) {
-  // Create a new XMLHttpRequest object
   // Fetch details of a specific event by event number (ID)
   // Number must be sent for the php file to query the DB
 
@@ -50,9 +50,7 @@ function fetchEventDetails(eventId) {
       console.log(eventDetails);
     }
   };
-
-  eDetails.document // Load events once the DOM is ready //fetchEventDetails(123); // Replace with your actual event ID // Example: Call the function with a specific event ID
-    .addEventListener("DOMContentLoaded", getEventsList);
 }
 
+// Example: Call the function with a specific event ID
 fetchEventDetails(2);
