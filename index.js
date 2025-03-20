@@ -85,6 +85,7 @@ document.getElementById("getWeather").addEventListener("click", getWeather);
 async function getWeather() {
   fetch;
 
+  console.log("Getting weather" + eventDetails);
   let latlong = eventDetails[0].lon_lat;
   let lat = latlong.split(",")[0];
   let lon = latlong.split(",")[1];
