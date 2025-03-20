@@ -79,3 +79,16 @@ function fetchEventDetails(eventId) {
     }
   };
 }
+
+document.getElementById("getWeather").addEventListener("click", getWeather);
+
+async function getWeather() {
+  fetch;
+
+  let latlong = eventDetails[0].lon_lat;
+  let lat = latlong.split(",")[0];
+  let lon = latlong.split(",")[1];
+  console.log("Lat" + lat, "Long" + lon);
+
+  // https://api.openweathermap.org/data/2.5/weather?lat=-37.788101&lon=175.276993&appid=69b9fe24c1ed2aee705d6f960fa76b25&units=metric
+}
