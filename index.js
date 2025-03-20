@@ -34,5 +34,24 @@ function getEventsList() {
   asyncRequest.send();
 }
 
-// Load events once the DOM is ready
-document.addEventListener("DOMContentLoaded", getEventsList);
+function fetchEventDetails(eventId) {
+  // Create a new XMLHttpRequest object
+  // Fetch details of a specific event by event number (ID)
+  // Number must be sent for the php file to query the DB
+
+  var eDetails = new XMLHttpRequest();
+  eDetails.open("GET", "getEventDetails.php?eventId=" + eventId, true);
+  eDetails.send();
+
+  eDetails.onreadystatechange = function () {
+    if (eDetails.readyState == 4 && eDetails.status == 200) {
+      var eventDetails = JSON.parse(eDetails.responseText);
+      console.log(eventDetails);
+    }
+  };
+
+  eDetails.document // Load events once the DOM is ready //fetchEventDetails(123); // Replace with your actual event ID // Example: Call the function with a specific event ID
+    .addEventListener("DOMContentLoaded", getEventsList);
+}
+
+fetchEventDetails(2);
