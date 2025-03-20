@@ -57,9 +57,6 @@ function fetchEventDetails(eventId) {
       document.getElementById("eventName").innerHTML =
         "Event Name: " + eventDetails[0].name;
 
-      document.getElementById("eventDescription").innerHTML =
-        "Description: " + eventDetails[0].description;
-
       document.getElementById("eventMonth").innerHTML =
         "Month: " + eventDetails[0].month;
 
