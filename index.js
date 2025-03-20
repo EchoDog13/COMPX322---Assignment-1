@@ -32,6 +32,7 @@ function getEventsList() {
 
   asyncRequest.open("GET", "getEventsList.php", true);
   asyncRequest.send();
+  fetchEventDetails(2);
 }
 
 function fetchEventDetails(eventId) {
