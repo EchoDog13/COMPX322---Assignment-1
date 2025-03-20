@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", getEventsList);
-document.addEventListener("DOMContentLoaded", fetchEventDetails(2));
+document.addEventListener("DOMContentLoaded", fetchEventDetails);
 
 function getEventsList() {
   let asyncRequest = new XMLHttpRequest();
@@ -42,7 +42,7 @@ function fetchEventDetails(eventId) {
   // Number must be sent for the php file to query the DB
 
   var eDetails = new XMLHttpRequest();
-  eDetails.open("GET", "getEventDetails.php?eventId=" + eventId, true);
+  eDetails.open("GET", "getEventDetails.php?eventId=" + 2, true);
   eDetails.send();
 
   eDetails.onreadystatechange = function () {
