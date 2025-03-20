@@ -51,7 +51,7 @@ function fetchEventDetails(eventId) {
 
   eDetails.onreadystatechange = function () {
     if (eDetails.readyState == 4 && eDetails.status == 200) {
-      var eventDetails = JSON.parse(eDetails.responseText);
+      eventDetails = JSON.parse(eDetails.responseText);
       console.log(eventDetails);
       console.log("Event NAME:" + eventDetails[0].name);
 
@@ -87,7 +87,7 @@ document.getElementById("getWeather").addEventListener("click", getWeather);
 async function getWeather() {
   fetch;
 
-  console.log("Getting weather" + eventDetails);
+  console.log("Getting weather" + eventDetails[0].lon_lat);
   let latlong = eventDetails[0].lon_lat.split(",");
   let lat = latlong.split(",")[0];
   let lon = latlong.split(",")[1];
