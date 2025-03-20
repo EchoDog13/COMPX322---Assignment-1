@@ -95,7 +95,13 @@ async function getWeather() {
   console.log("Lat" + lat, "Long" + lon);
 
   fetch(
-    "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric"
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+      lat +
+      "&lon=" +
+      lon +
+      "&appid=" +
+      apiKey +
+      "&units=metric"
   )
     .then((response) => response.json()) // Convert response to JSON
     .then((data) => console.log(data)) // Handle the data
