@@ -52,6 +52,3 @@ function fetchEventDetails(eventId) {
     }
   };
 }
-
-// Example: Call the function with a specific event ID
-fetchEventDetails(2);

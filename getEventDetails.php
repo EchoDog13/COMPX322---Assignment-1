@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 include 'connectdb.php'; // Include the PDO connection
 
 //receive the id from the get request
-$id = $_GET['id'];
+$id = $_GET['eventId'];
 
 $sql = "SELECT * FROM events WHERE id = $id"; // SQL query to get all events
 $result = $con->query($sql);
