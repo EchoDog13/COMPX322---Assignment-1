@@ -55,16 +55,30 @@ function fetchEventDetails(eventId) {
 
       // Display event details
       document.getElementById("eventName").innerHTML =
-        "Event Name:" + eventDetails[0].name;
+        "Event Name: " + eventDetails[0].name;
+
+      document.getElementById("eventDescription").innerHTML =
+        "Description: " + eventDetails[0].description;
+
+      document.getElementById("eventMonth").innerHTML =
+        "Month: " + eventDetails[0].month;
+
       document.getElementById("eventDay").innerHTML =
-        "Day" + eventDetails[0].day;
+        "Day: " + eventDetails[0].day;
       document.getElementById("eventTime").innerHTML =
-        "Time" + eventDetails[0].time;
+        "Time: " + eventDetails[0].time;
       document.getElementById("eventLocation").innerHTML =
-        "Location" + eventDetails[0].location;
+        "Location: " + eventDetails[0].location;
       document.getElementById("eventCategory").innerHTML =
-        "Category" + eventDetails[0].category;
-      document.getElementById("eventCost").src = "Cost" + eventDetails[0].cost;
+        "Category: " + eventDetails[0].category;
+      document.getElementById("eventCost").src =
+        "Cost: " + eventDetails[0].cost;
+
+      document.getElementById("lon_lat").innerHTML =
+        "Longitude: " + eventDetails[0].lon_lat;
+
+      document.getElementById("eventTagged").innerHTML =
+        "Tagged: " + eventDetails[0].tagged;
     }
   };
 }
