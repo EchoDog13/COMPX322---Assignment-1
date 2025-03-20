@@ -60,7 +60,7 @@ function fetchEventDetails(eventId) {
         eventDetails.location;
       document.getElementById("eventCategory").innerHTML =
         eventDetails.category;
-      document.getElementById("eventCost").src = cost;
+      document.getElementById("eventCost").src = eventDetails.cost;
     }
   };
 }
