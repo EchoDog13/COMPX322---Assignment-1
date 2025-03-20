@@ -37,6 +37,8 @@ function getEventsList() {
   asyncRequest.send();
 }
 
+// Fetch event details using an XHR request
+// eventID is the ID of the event to fetch
 function fetchEventDetails(eventId) {
   // Fetch details of a specific event by event number (ID)
   // Number must be sent for the php file to query the DB
@@ -49,6 +51,17 @@ function fetchEventDetails(eventId) {
     if (eDetails.readyState == 4 && eDetails.status == 200) {
       var eventDetails = JSON.parse(eDetails.responseText);
       console.log(eventDetails);
+
+      // Display event details
+      document.getElementById("eventName").innerHTML = eventDetails.name;
+      document.getElementById("eventDay").innerHTML = eventDetails.day;
+      document.getElementById("eventTime").innerHTML = eventDetails.time;
+      document.getElementById("eventLocation").innerHTML =
+        eventDetails.location;
+      document.getElementById("eventDescription").innerHTML =
+        ventDetails.description;
+      document.getElementById("category").innerHTML = eventDetails.category;
+      document.getElementById("cost").src = cost;
     }
   };
 }
