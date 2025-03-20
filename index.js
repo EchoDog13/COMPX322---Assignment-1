@@ -93,7 +93,7 @@ async function getWeather() {
   let lat = latlong.split(",")[0];
   let lon = latlong.split(",")[1];
   console.log("Lat" + lat, "Long" + lon);
-
+  // test
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?lat=" +
       lat +
