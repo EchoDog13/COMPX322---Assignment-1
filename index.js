@@ -85,6 +85,7 @@ function fetchEventDetails(eventId) {
 document.getElementById("getWeather").addEventListener("click", getWeather);
 
 async function getWeather() {
+  var apiKey = "69b9fe24c1ed2aee705d6f960fa76b25";
   fetch;
 
   console.log("Getting weather" + eventDetails[0].lon_lat);
@@ -93,5 +94,15 @@ async function getWeather() {
   let lon = latlong.split(",")[1];
   console.log("Lat" + lat, "Long" + lon);
 
-  // https://api.openweathermap.org/data/2.5/weather?lat=-37.788101&lon=175.276993&appid=69b9fe24c1ed2aee705d6f960fa76b25&units=metric
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${apiKey}&units=metric"
+  )
+    .then((response) => response.json()) // Convert response to JSON
+    .then((data) => console.log(data)) // Handle the data
+    .then(
+      (data) =>
+        (document.getElementById("weather").innerHTML =
+          "Weather: " + data.weather[0].temp)
+    )
+    .then.catch((error) => console.error("Error:", error)); // Handle errors
 }
