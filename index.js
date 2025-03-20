@@ -51,6 +51,7 @@ function fetchEventDetails(eventId) {
     if (eDetails.readyState == 4 && eDetails.status == 200) {
       var eventDetails = JSON.parse(eDetails.responseText);
       console.log(eventDetails);
+      console.log(eventDetails.name);
 
       // Display event details
       document.getElementById("eventName").innerHTML = eventDetails.name;
