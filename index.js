@@ -102,7 +102,7 @@ async function getWeather() {
     .then(
       (data) =>
         (document.getElementById("weather").innerHTML =
-          "Weather: " + data.weather[0].temp)
+          "Weather: " + data.weather.temp)
     )
     .then.catch((error) => console.error("Error:", error)); // Handle errors
 }
