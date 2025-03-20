@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", getEventsList);
 
+let eventDetails = [];
+
 function getEventsList() {
   let asyncRequest = new XMLHttpRequest();
 
