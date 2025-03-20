@@ -58,8 +58,6 @@ function fetchEventDetails(eventId) {
       document.getElementById("eventTime").innerHTML = eventDetails.time;
       document.getElementById("eventLocation").innerHTML =
         eventDetails.location;
-      document.getElementById("eventDescription").innerHTML =
-        ventDetails.description;
       document.getElementById("category").innerHTML = eventDetails.category;
       document.getElementById("cost").src = cost;
     }
