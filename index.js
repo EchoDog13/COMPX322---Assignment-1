@@ -54,14 +54,14 @@ function fetchEventDetails(eventId) {
       console.log("Event NAME:" + eventDetails[0].name);
 
       // Display event details
-      document.getElementById("eventName").innerHTML = eventDetails[0].name;
-      document.getElementById("eventDay").innerHTML = eventDetails[0].day;
-      document.getElementById("eventTime").innerHTML = eventDetails[0].time;
-      document.getElementById("eventLocation").innerHTML =
+      document.getElementById("eventName").innerHTML += eventDetails[0].name;
+      document.getElementById("eventDay").innerHTML += eventDetails[0].day;
+      document.getElementById("eventTime").innerHTML += eventDetails[0].time;
+      document.getElementById("eventLocation").innerHTML +=
         eventDetails[0].location;
-      document.getElementById("eventCategory").innerHTML =
+      document.getElementById("eventCategory").innerHTML +=
         eventDetails[0].category;
-      document.getElementById("eventCost").src = eventDetails[0].cost;
+      document.getElementById("eventCost").src += eventDetails[0].cost;
     }
   };
 }
