@@ -123,3 +123,20 @@ async function getWeather() {
     })
     .catch((error) => console.error("Error:", error)); // Handle errors
 }
+
+function editEvent() {
+  //Fill in the form with the event details
+  document.getElementsByName("eventName")[0].value = eventDetails[0].name;
+  document.getElementsByName("eventMonth")[0].value = eventDetails[0].month;
+  document.getElementsByName("eventDay")[0].value = eventDetails[0].day;
+  document.getElementsByName("eventTime")[0].value = eventDetails[0].time;
+  document.getElementsByName("eventLocation")[0].value =
+    eventDetails[0].location;
+  document.getElementsByName("eventCategory")[0].value =
+    eventDetails[0].category;
+  document.getElementsByName("eventCost")[0].value = eventDetails[0].cost;
+  document.getElementsByName("lon_lat")[0].value = eventDetails[0].lon_lat;
+  document.getElementsByName("eventTagged")[0].value = eventDetails[0].tagged;
+}
+
+function saveEvent() {}

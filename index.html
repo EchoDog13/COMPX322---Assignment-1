@@ -33,8 +33,47 @@
         
         <div id="weather">
             <h2>Current Weather Conditions</h2>
-        </div>
+        </div>    
+    </div>
 
+    <div id="editEvent"> <form id="editEventForm">
+        <h3>Edit Event</h3>
+    
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" name="eventName">
+    
+        <label for="eventCategory">Category:</label>
+        <input type="text" id="eventCategory" name="eventCategory">
+    
+        <label for="eventCost">Cost:</label>
+        <input type="text" id="eventCost" name="eventCost">
+    
+        <label for="eventDay">Day:</label>
+        <input type="text" id="eventDay" name="eventDay">
+    
+        <label for="eventId">Event ID:</label>
+        <input type="text" id="eventId" name="eventId" readonly>
+    
+        <label for="eventLocation">Location:</label>
+        <input type="text" id="eventLocation" name="eventLocation">
+    
+        <label for="lon_lat">Longitude, Latitude:</label>
+        <input type="text" id="lon_lat" name="lon_lat">
+    
+        <label for="eventMonth">Month:</label>
+        <input type="text" id="eventMonth" name="eventMonth">
+    
+        <label for="eventNotes">Notes:</label>
+        <textarea id="eventNotes" name="eventNotes"></textarea>
+    
+        <label for="eventTagged">Tagged:</label>
+        <input type="text" id="eventTagged" name="eventTagged">
+    
+        <label for="eventTime">Time:</label>
+        <input type="text" id="eventTime" name="eventTime">
+    
+        <button type="button" onclick="saveEvent()">Save</button>
+    </form>
     </div>
 
     <footer></footer>
