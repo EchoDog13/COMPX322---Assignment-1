@@ -47,6 +47,8 @@ function fetchEventDetails(eventId) {
   document.getElementById("eventList").style.display = "none";
 
   document.getElementById("eventDetails").style.display = "block";
+  document.getElementById("weather").style.display = "none";
+  document.getElementById("editEvent").style.display = "none";
 
   // Fetch details of a specific event by event number (ID)
   // Number must be sent for the php file to query the DB
@@ -91,6 +93,8 @@ function fetchEventDetails(eventId) {
 document.getElementById("getWeather").addEventListener("click", getWeather);
 
 async function getWeather() {
+  document.getElementById("weather").style.display = "block";
+
   var apiKey = "69b9fe24c1ed2aee705d6f960fa76b25";
 
   console.log("Getting weather for event:", eventDetails[0].lon_lat);
@@ -134,6 +138,7 @@ document.getElementById("editEventButton").addEventListener("click", editEvent);
 document.getElementById("saveEvent").addEventListener("click", saveEvent);
 
 function editEvent() {
+  document.getElementById("editEvent").style.display = "block";
   //Fill in the form with the event details
   document.getElementsByName("eventName")[0].value = eventDetails[0].name;
   document.getElementsByName("eventMonth")[0].value = eventDetails[0].month;
