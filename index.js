@@ -159,7 +159,7 @@ function saveEvent() {
   console.log(newEvent);
 
   var eventUpdate = new XMLHttpRequest();
-  eventUpdate.open("POST", "saveEventDetails", true);
+  eventUpdate.open("POST", "saveEventDetails.php", true);
   eventUpdate.setRequestHeader(
     "Content-Type",
     "application/json;charset=UTF-8"
