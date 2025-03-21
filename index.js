@@ -90,8 +90,8 @@ async function getWeather() {
 
   console.log("Getting weather" + eventDetails[0].lon_lat);
   let latlong = eventDetails[0].lon_lat;
-  let lat = latlong.split(",")[0];
-  let lon = latlong.split(",")[1];
+  let lat = latlong.split(",")[0].trim();
+  let lon = latlong.split(",")[1].trim();
   console.log("Lat" + lat, "Long" + lon);
   // test
   fetch(
