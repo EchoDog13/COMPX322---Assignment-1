@@ -46,6 +46,8 @@ function getEventsList() {
 function fetchEventDetails(eventId) {
   document.getElementById("eventList").style.display = "none";
 
+  document.getElementById("eventDetails").style.display = "block";
+
   // Fetch details of a specific event by event number (ID)
   // Number must be sent for the php file to query the DB
 
