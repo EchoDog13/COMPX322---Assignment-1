@@ -156,7 +156,7 @@ function saveEvent() {
     tagged: document.getElementsByName("eventTagged")[0].value,
   };
 
-  console.log(newEvent);
+  console.log(updatedEvent);
 
   var eventUpdate = new XMLHttpRequest();
   eventUpdate.open("POST", "saveEventDetails.php", true);
