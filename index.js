@@ -124,9 +124,7 @@ async function getWeather() {
     .catch((error) => console.error("Error:", error)); // Handle errors
 }
 
-document
-  .getElementById("editEventDetails")
-  .addEventListener("click", editEvent);
+document.getElementById("edtiEventButton").addEventListener("click", editEvent);
 
 function editEvent() {
   //Fill in the form with the event details
