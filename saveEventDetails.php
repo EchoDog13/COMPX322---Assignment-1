@@ -23,7 +23,7 @@ try {
         $tagged = $JSONData['tagged'];
 
         //UPDATE into db at ID
-        $sql = "UPDATE events SET name = '$name', lat_long = '$lat_long', cost = '$cost', month = '$month', day = '$day', description = '$description', time = '$time', location = '$location', tagged = '$tagged' WHERE id = $id";
+        $sql = "UPDATE events SET name = '$name', lat_lon = '$lat_long', cost = '$cost', month = '$month', day = '$day', time = '$time', location = '$location', tagged = '$tagged' WHERE id = $id";
 
 
         $con->query($sql);
