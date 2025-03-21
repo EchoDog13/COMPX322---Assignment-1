@@ -107,8 +107,7 @@ async function getWeather() {
     .then((data) => console.log(data)) // Handle the data
     .then(
       (data) =>
-        (document.getElementById("weather").innerHTML =
-          "Weather: " + data.weather.temp)
+        (document.getElementById("weather").innerHTML = "Weather: " + data.temp)
     )
     .then.catch((error) => console.error("Error:", error)); // Handle errors
 }
