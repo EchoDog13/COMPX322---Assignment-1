@@ -106,11 +106,20 @@ async function getWeather() {
     .then((data) => {
       console.log(data); // Handle the data
       document.getElementById("weather").innerHTML =
-        "Current Tempurature (C): " + data.main.temp;
-      "Current Humidity: " + data.main.humidity;
-      "Current Wind Speed: " + data.wind.speed;
-      "Daily Tempurate Maximum: " + data.main.temp_max;
-      "Daily Tempurate Minimum: " + data.main.temp_min;
+        "Current Tempurature (C): " +
+        data.main.temp +
+        "<br>" +
+        "Current Humidity: " +
+        data.main.humidity +
+        "<br>" +
+        "Current Wind Speed: " +
+        data.wind.speed +
+        "<br>" +
+        "Daily Tempurate Maximum: " +
+        data.main.temp_max +
+        "<br>" +
+        "Daily Tempurate Minimum: " +
+        data.main.temp_min;
     })
     .catch((error) => console.error("Error:", error)); // Handle errors
 }
