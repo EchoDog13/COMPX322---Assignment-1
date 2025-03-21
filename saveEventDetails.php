@@ -5,41 +5,29 @@ ini_set('display_errors', 1);
 include 'connectdb.php'; // Include the PDO connection
 
 try {
-    // Receive the id from the GET request
-    if (!isset($_GET['eventId'])) {
-        throw new Exception('Event ID is required');
-    }
-    $id = $_GET['eventId'];
 
-    // Receive form data from POST request
-    $fields = ['name', 'month', 'day', 'time', 'location', 'category', 'cost', 'lon_lat', 'tagged'];
-    $formData = [];
-    foreach ($fields as $field) {
-        if (!isset($_POST[$field])) {
-            throw new Exception("Field $field is required");
-        }
-        $formData[$field] = $_POST[$field];
-    }
-
-    // Prepare the SQL query to update the event details
-    $sql = "UPDATE events SET 
-        name = :name,
-        month = :month,
-        day = :day,
-        time = :time,
-        location = :location,
-        category = :category,
-        cost = :cost,
-        lon_lat = :lon_lat,
-        tagged = :tagged
-        WHERE id = :id";
-
-    if ($con->exec($sql)) {
-        echo json_encode(['status' => 'success', 'message' => 'Event details updated successfully']);
+    $JSONData = json_decode(file_get_contents('newEvent'), true); // Get the JSON data from the POST request
+    if ($JSONData == null) {
+        throw new Exception("Invalid JSON data");
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Failed to update event details']);
+
+        $name = $JSONData['name'];
+        $lat_long = $JSONData['lat_long'];
+        $cost = $JSONData['cost'];
+        $month = $JSONData['month'];
+        $day = $JSONData['day'];
+
+        $description = $JSONData['description'];
+        $time = $JSONData['time'];
+        $location = $JSONData['location'];
+        $id = $JSONData['id'];
+        $tagged = $JSONData['tagged'];
+
+        //UPDATE into db at ID
+        $sql = "UPDATE events SET name = '$name', lat_long = '$lat_long', cost = '$cost', month = '$month', day = '$day', description = '$description', time = '$time', location = '$location', tagged = '$tagged' WHERE id = $id";
+
+
+        $con->query($sql);
     }
-} catch (Exception $e) {
-    echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
 }
 ?>

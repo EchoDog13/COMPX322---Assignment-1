@@ -166,10 +166,10 @@ function saveEvent() {
   );
   eventUpdate.send(JSON.stringify(newEvent));
 
-  eventUpdate.onreadystatechange = function () {
-    if (eventUpdate.readyState == 4 && eventUpdate.status == 200) {
-      console.log(eventUpdate.responseText);
-      getEventsList();
-    }
-  };
+  // eventUpdate.onreadystatechange = function () {
+  //   if (eventUpdate.readyState == 4 && eventUpdate.status == 200) {
+  //     console.log(eventUpdate.responseText);
+  //     getEventsList();
+  //   }
+  // };
 }
