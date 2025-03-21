@@ -12,12 +12,11 @@ try {
     } else {
 
         $name = $JSONData['name'];
-        $lat_long = $JSONData['lat_long'];
+        $lat_long = $JSONData['lat_log'];
         $cost = $JSONData['cost'];
         $month = $JSONData['month'];
         $day = $JSONData['day'];
 
-        $description = $JSONData['description'];
         $time = $JSONData['time'];
         $location = $JSONData['location'];
         $id = $JSONData['id'];
