@@ -124,6 +124,10 @@ async function getWeather() {
     .catch((error) => console.error("Error:", error)); // Handle errors
 }
 
+document
+  .getElementById("editEventDetails")
+  .addEventListener("click", editEvent);
+
 function editEvent() {
   //Fill in the form with the event details
   document.getElementsByName("eventName")[0].value = eventDetails[0].name;

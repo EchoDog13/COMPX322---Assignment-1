@@ -12,9 +12,9 @@ try {
     $id = $_GET['eventId'];
 
     // Receive form data from POST request
-    $requiredFields = ['name', 'month', 'day', 'time', 'location', 'category', 'cost', 'lon_lat', 'tagged'];
+    $fields = ['name', 'month', 'day', 'time', 'location', 'category', 'cost', 'lon_lat', 'tagged'];
     $formData = [];
-    foreach ($requiredFields as $field) {
+    foreach ($fields as $field) {
         if (!isset($_POST[$field])) {
             throw new Exception("Field $field is required");
         }
@@ -34,16 +34,10 @@ try {
         tagged = :tagged
         WHERE id = :id";
 
-    $stmt = $con->prepare($sql);
-    foreach ($formData as $key => $value) {
-        $stmt->bindValue(":$key", $value);
-    }
-    $stmt->bindValue(':id', $id);
-
-    if ($stmt->execute()) {
+    if ($con->exec($sql)) {
         echo json_encode(['status' => 'success', 'message' => 'Event details updated successfully']);
     } else {
-        throw new Exception('Failed to update event details');
+        echo json_encode(['status' => 'error', 'message' => 'Failed to update event details']);
     }
 } catch (Exception $e) {
     echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
