@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", getEventsList);
 let eventDetails = [];
 
 function getEventsList() {
+  document.getElementById("eventList").style.display = "block";
+  document.getElementById("eventDetails").style.display = "none";
   let asyncRequest = new XMLHttpRequest();
 
   asyncRequest.onload = () => {
@@ -42,6 +44,8 @@ function getEventsList() {
 // Fetch event details using an XHR request
 // eventID is the ID of the event to fetch
 function fetchEventDetails(eventId) {
+  document.getElementById("eventList").style.display = "none";
+
   // Fetch details of a specific event by event number (ID)
   // Number must be sent for the php file to query the DB
 

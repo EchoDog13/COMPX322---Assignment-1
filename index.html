@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<header>
-    <h1>Local Events</h1>
-</header>
 
 <body>
+
+    <!-- Event's List -->
+    <h1>Local Events</h1>
     <p>Click below to get more details about the exciting upcoming events in your location town </p>
-    <!-- div contains event list items which are loaded in via a request -->
-    <div id="eventList"></div>
+    <div id="eventList"></div>  <!-- Event's List div updated by JS--> 
+
+<!-- Event Details -->
+
     <div id="eventDetails">
         <h1 id="eventName"></h1>
         <h3 id="eventCategory"></h3>
@@ -28,13 +30,14 @@
         <p id="eventTagged"></p>
         <p id="eventTime"></p>
 
-        <button id="getWeather">Get Weather</button>
 
-        
+        <!-- Button to retrieve weather information for event location -->
+        <button id="getWeather">Get Weather</button>
+        <!-- div to load weather confitions into -->
         <div id="weather">
             <h2>Current Weather Conditions</h2>
         </div>    
-    </div>
+    
 
     <button id="editEventButton">Edit Event</button>
 
@@ -77,7 +80,7 @@
         <button type="button" id="saveEvent">Save</button>
     </form>
     </div>
-
+</div>
     <footer></footer>
     <script src="index.js"  ></script>
 </body>
