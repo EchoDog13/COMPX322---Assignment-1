@@ -6,7 +6,7 @@ include 'connectdb.php'; // Include the PDO connection
 
 try {
 
-    $JSONData = json_decode(file_get_contents('updatedEvent'), true); // Get the JSON data from the POST request
+    $JSONData = json_decode(file_get_contents('php://input'), true); // Get the JSON data from the POST request
     if ($JSONData == null) {
         throw new Exception("Invalid JSON data");
     } else {
