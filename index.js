@@ -86,29 +86,27 @@ document.getElementById("getWeather").addEventListener("click", getWeather);
 
 async function getWeather() {
   var apiKey = "69b9fe24c1ed2aee705d6f960fa76b25";
-  fetch;
 
-  console.log("Getting weather" + eventDetails[0].lon_lat);
-  let latlong = eventDetails[0].lon_lat;
-  let lat = latlong.split(",")[0].trim();
-  let lon = latlong.split(",")[1].trim();
-  console.log("Lat" + lat, "Long" + lon);
-  // test
+  console.log("Getting weather for event:", eventDetails[0].lon_lat);
+  let latlong = eventDetails[0].lon_lat.split(",");
+  let lat = latlong[0].trim();
+  let lon = latlong[1].trim();
+  console.log("Lat:", lat, "Long:", lon);
+
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?lat=" +
-      lat +
+      encodeURIComponent(lat) +
       "&lon=" +
-      lon +
+      encodeURIComponent(lon) +
       "&appid=" +
       apiKey +
       "&units=metric"
   )
     .then((response) => response.json()) // Convert response to JSON
-    .then((data) => console.log(data)) // Handle the data
-    .then(
-      (data) =>
-        (document.getElementById("weather").innerHTML =
-          "Weather: " + data.main.temp)
-    )
-    .then.catch((error) => console.error("Error:", error)); // Handle errors
+    .then((data) => {
+      console.log(data); // Handle the data
+      document.getElementById("weather").innerHTML =
+        "Weather: " + data.main.temp;
+    })
+    .catch((error) => console.error("Error:", error)); // Handle errors
 }
