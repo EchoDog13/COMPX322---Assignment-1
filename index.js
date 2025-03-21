@@ -125,6 +125,7 @@ async function getWeather() {
 }
 
 document.getElementById("editEventButton").addEventListener("click", editEvent);
+document.getElementById("saveEvent").addEventListener("click", saveEvent);
 
 function editEvent() {
   //Fill in the form with the event details
@@ -141,4 +142,34 @@ function editEvent() {
   document.getElementsByName("eventTagged")[0].value = eventDetails[0].tagged;
 }
 
-function saveEvent() {}
+function saveEvent() {
+  let newEvent = {
+    id: eventDetails[0].id,
+    name: document.getElementsByName("eventName")[0].value,
+    month: document.getElementsByName("eventMonth")[0].value,
+    day: document.getElementsByName("eventDay")[0].value,
+    time: document.getElementsByName("eventTime")[0].value,
+    location: document.getElementsByName("eventLocation")[0].value,
+    category: document.getElementsByName("eventCategory")[0].value,
+    cost: document.getElementsByName("eventCost")[0].value,
+    lon_lat: document.getElementsByName("lon_lat")[0].value,
+    tagged: document.getElementsByName("eventTagged")[0].value,
+  };
+
+  console.log(newEvent);
+
+  var eventUpdate = new XMLHttpRequest();
+  eventUpdate.open("POST", "updateEvent.php", true);
+  eventUpdate.setRequestHeader(
+    "Content-Type",
+    "application/json;charset=UTF-8"
+  );
+  eventUpdate.send(JSON.stringify(newEvent));
+
+  eventUpdate.onreadystatechange = function () {
+    if (eventUpdate.readyState == 4 && eventUpdate.status == 200) {
+      console.log(eventUpdate.responseText);
+      getEventsList();
+    }
+  };
+}
