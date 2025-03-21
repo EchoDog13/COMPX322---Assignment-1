@@ -29,5 +29,7 @@ try {
 
         $con->query($sql);
     }
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
 }
 ?>

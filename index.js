@@ -143,7 +143,7 @@ function editEvent() {
 }
 
 function saveEvent() {
-  let newEvent = {
+  let updatedEvent = {
     id: eventDetails[0].id,
     name: document.getElementsByName("eventName")[0].value,
     month: document.getElementsByName("eventMonth")[0].value,
@@ -164,7 +164,7 @@ function saveEvent() {
     "Content-Type",
     "application/json;charset=UTF-8"
   );
-  eventUpdate.send(JSON.stringify(newEvent));
+  eventUpdate.send(JSON.stringify(updatedEvent));
 
   // eventUpdate.onreadystatechange = function () {
   //   if (eventUpdate.readyState == 4 && eventUpdate.status == 200) {
