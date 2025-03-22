@@ -18,13 +18,13 @@ body {
 
 .event-item {
     padding: 15px;
-    background-color: light;
+    padding-bottom: 25px;
+    background-color: #648DE5 ;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: black;
     font-family: Arial, sans-serif;
     transition: box-shadow 0.2s;
-    //flex: 1 1 calc(25% - 30px); 4 items per row, with space for gap
     box-sizing: border-box; /* Ensures padding and border are included in the width */
 }
 
