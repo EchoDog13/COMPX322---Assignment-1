@@ -171,13 +171,11 @@ function saveEvent() {
     "application/json;charset=UTF-8"
   );
   eventUpdate.send(JSON.stringify(updatedEvent));
-  document.getElementById("eventDetails").innerHTML = "";
-  fetchEventDetails(updatedEvent.id);
 
-  // eventUpdate.onreadystatechange = function () {
-  //   if (eventUpdate.readyState == 4 && eventUpdate.status == 200) {
-  //     console.log(eventUpdate.responseText);
-  //     getEventsList();
-  //   }
-  // };
+  eventUpdate.onreadystatechange = function () {
+    if (eventUpdate.readyState == 4 && eventUpdate.status == 200) {
+      console.log(eventUpdate.responseText);
+      fetchEventDetails(updatedEvent.id); // Fetch updated event details after saving
+    }
+  };
 }
