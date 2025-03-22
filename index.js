@@ -94,6 +94,7 @@ function fetchEventDetails(eventId) {
 document.getElementById("getWeather").addEventListener("click", getWeather);
 
 async function getWeather() {
+  document.getElementById("weather").innerHTML = "";
   document.getElementById("weather").style.display = "block";
 
   var apiKey = "69b9fe24c1ed2aee705d6f960fa76b25";
