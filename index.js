@@ -119,17 +119,17 @@ async function getWeather() {
         "Current Tempurature (C): " +
         data.main.temp +
         "<br>" +
-        "Current Humidity: " +
+        "Current Humidity (%): " +
         data.main.humidity +
         "<br>" +
-        "Current Wind Speed: " +
+        "Current Wind Speed (kph): " +
         data.wind.speed +
         "<br>" +
-        "Daily Tempurate Maximum: " +
+        "Daily Tempurate Maximum (C): " +
         data.main.temp_max +
         "<br>" +
-        "Daily Tempurate Minimum: " +
-        data.main.temp_min;
+        "Daily Rainfall (mm): " +
+        data.rain;
     })
     .catch((error) => console.error("Error:", error)); // Handle errors
 }
