@@ -64,12 +64,10 @@ function fetchEventDetails(eventId) {
       console.log("Event NAME:" + eventDetails[0].name);
 
       // Display event details
-      document.getElementById("eventName").innerHTML =
-        "Event Name: " + eventDetails[0].name;
+      document.getElementById("eventName").innerHTML = eventDetails[0].name;
 
       document.getElementById("eventMonth").innerHTML =
         "Month: " + eventDetails[0].month;
-
       document.getElementById("eventDay").innerHTML =
         "Day: " + eventDetails[0].day;
       document.getElementById("eventTime").innerHTML =
