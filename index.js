@@ -15,7 +15,7 @@ function getEventsList() {
       let events = JSON.parse(asyncRequest.responseText); // Parse JSON
 
       // Insert events into the container
-      eventContainer.innerHTML = events
+      eventContainer.innerHTML += events
         .map(
           (event) =>
             `<div class="event-item" data-id="${event.id}">${event.name}</div>`
