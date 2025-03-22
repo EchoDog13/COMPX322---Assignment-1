@@ -7,6 +7,7 @@ function getEventsList() {
   document.getElementById("eventList").style.display = "block";
   document.getElementById("eventDetails").style.display = "none";
   let asyncRequest = new XMLHttpRequest();
+  asyncRequest.open("GET", "getEventsList.php?t=" + Date.now(), true); // Prevents caching
 
   asyncRequest.onload = () => {
     if (asyncRequest.status === 200) {
@@ -121,13 +122,7 @@ async function getWeather() {
         data.main.humidity +
         "<br>" +
         "Current Wind Speed (kph): " +
-        data.wind.speed +
-        "<br>" +
-        "Daily Tempurate Maximum (C): " +
-        data.main.temp_max +
-        "<br>" +
-        "Daily Rainfall (mm): " +
-        data.rain;
+        data.wind.speed;
     })
     .catch((error) => console.error("Error:", error)); // Handle errors
 }
