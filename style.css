@@ -7,7 +7,7 @@ body {
     padding: 20px; /* Add padding to the body */
     font-family: Arial, sans-serif;
     height: 100%;
-    background-color: lightgray;
+    background-color: white;
 }
 
 .container {
@@ -21,11 +21,11 @@ body {
     background-color: light;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
     font-family: Arial, sans-serif;
     transition: box-shadow 0.2s;
-    /* flex: 1 1 calc(25% - 30px); 4 items per row, with space for gap */
+    //flex: 1 1 calc(25% - 30px); 4 items per row, with space for gap
     box-sizing: border-box; /* Ensures padding and border are included in the width */
-    background-color: #006BA6;
 }
 
 .event-item:hover {
