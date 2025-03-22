@@ -1,11 +1,10 @@
 html {
     height: 100%;
-    padding: 5px;
-
 }
 
 body {
     margin: 0;
+    padding: 20px; /* Add padding to the body */
     font-family: Arial, sans-serif;
     height: 100%;
     background-color: lightgray;
