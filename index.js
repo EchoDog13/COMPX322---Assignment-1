@@ -113,7 +113,7 @@ async function getWeather() {
     .then((response) => response.json()) // Convert response to JSON
     .then((data) => {
       console.log(data); // Handle the data
-      document.getElementById("weather").innerHTML =
+      document.getElementById("weather").innerHTML +=
         "Current Tempurature (C): " +
         data.main.temp +
         "<br>" +
