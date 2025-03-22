@@ -87,6 +87,9 @@ function fetchEventDetails(eventId) {
 
       document.getElementById("eventTagged").innerHTML =
         "Tagged: " + eventDetails[0].tagged;
+
+      document.getElementById("eventNotes").innerHTML =
+        "Notes: " + eventDetails[0].notes;
     }
   };
 }
