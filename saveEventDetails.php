@@ -31,18 +31,18 @@ try {
             tagged = :tagged
             WHERE id = :id";
 
-        $stmt = $con->prepare($sql);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':lon_lat', $lat_long);
-        $stmt->bindParam(':cost', $cost);
-        $stmt->bindParam(':month', $month);
-        $stmt->bindParam(':day', $day);
-        $stmt->bindParam(':time', $time);
-        $stmt->bindParam(':location', $location);
-        $stmt->bindParam(':tagged', $tagged);
-        $stmt->bindParam(':id', $id);
+        $bind = $con->prepare($sql);
+        $bind->bindParam(':name', $name);
+        $bind->bindParam(':lon_lat', $lat_long);
+        $bind->bindParam(':cost', $cost);
+        $bind->bindParam(':month', $month);
+        $bind->bindParam(':day', $day);
+        $bind->bindParam(':time', $time);
+        $bind->bindParam(':location', $location);
+        $bind->bindParam(':tagged', $tagged);
+        $bind->bindParam(':id', $id);
 
-        if ($stmt->execute()) {
+        if ($bind->execute()) {
             echo json_encode(['status' => 'success', 'message' => 'Event details updated successfully']);
         } else {
             throw new Exception('Failed to update event details');
