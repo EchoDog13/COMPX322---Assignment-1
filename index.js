@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", getEventsList);
 
 let eventDetails = [];
 
+document.getElementById("back").addEventListener("click", getEventsList);
 function getEventsList() {
   document.getElementById("eventList").style.display = "block";
   document.getElementById("eventDetails").style.display = "none";
