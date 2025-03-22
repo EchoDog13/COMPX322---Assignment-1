@@ -29,7 +29,6 @@ function getEventsList() {
         if (target.classList.contains("event-item")) {
           let eventId = target.getAttribute("data-id");
           fetchEventDetails(eventId);
-          alert(`Clicked on event ID: ${eventId}`);
         }
       });
     }
