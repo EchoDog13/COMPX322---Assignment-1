@@ -150,6 +150,7 @@ function editEvent() {
   document.getElementsByName("eventCost")[0].value = eventDetails[0].cost;
   document.getElementsByName("lon_lat")[0].value = eventDetails[0].lon_lat;
   document.getElementsByName("eventTagged")[0].value = eventDetails[0].tagged;
+  document.getElementsByName("eventNotes")[0].value = eventDetails[0].notes;
 }
 
 function saveEvent() {
