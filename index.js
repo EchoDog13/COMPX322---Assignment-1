@@ -171,6 +171,7 @@ function saveEvent() {
     "application/json;charset=UTF-8"
   );
   eventUpdate.send(JSON.stringify(updatedEvent));
+  document.getElementById("eventDetails").innerHTML = "";
   fetchEventDetails(updatedEvent.id);
 
   // eventUpdate.onreadystatechange = function () {
