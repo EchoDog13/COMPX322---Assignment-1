@@ -7,7 +7,6 @@ function getEventsList() {
   document.getElementById("eventList").style.display = "block";
   document.getElementById("eventDetails").style.display = "none";
   let asyncRequest = new XMLHttpRequest();
-  asyncRequest.open("GET", "getEventsList.php?t=" + Date.now(), true); // Prevents caching
 
   asyncRequest.onload = () => {
     if (asyncRequest.status === 200) {
@@ -38,7 +37,9 @@ function getEventsList() {
   asyncRequest.onerror = () =>
     console.error("Network error: Could not retrieve data");
 
-  asyncRequest.open("GET", "getEventsList.php", true);
+  //asyncRequest.open("GET", "getEventsList.php", true);
+  asyncRequest.open("GET", "getEventsList.php?t=" + Date.now(), true); // Prevents caching
+
   asyncRequest.send();
 }
 
