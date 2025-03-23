@@ -5,6 +5,7 @@ let eventDetails = [];
 document.getElementById("back").addEventListener("click", getEventsList);
 function getEventsList() {
   document.getElementById("eventList").innerHTML = "";
+  document.getElementById("eventList").innerHTML = "<h1>Local Events/h1>";
   document.getElementById("eventList").style.display = "block";
   document.getElementById("eventDetails").style.display = "none";
   let asyncRequest = new XMLHttpRequest();
