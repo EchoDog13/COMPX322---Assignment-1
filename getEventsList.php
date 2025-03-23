@@ -1,9 +1,10 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 include 'connectdb.php'; // Include the PDO connection
 
+// SQL query to get all events and thier id
 $sql = "SELECT `name`, `id` FROM events";
 $result = $con->query($sql);
 
