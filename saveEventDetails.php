@@ -18,6 +18,7 @@ try {
         $location = $JSONData['location'];
         $id = $JSONData['id'];
         $tagged = $JSONData['tagged'];
+        $notes = $JSONData['notes'];
 
         // Prepare the SQL query to update the event details
         $sql = "UPDATE events SET 
@@ -28,6 +29,7 @@ try {
             day = :day,
             time = :time,
             location = :location,
+            notes = :notes,
             tagged = :tagged
             WHERE id = :id";
 
@@ -41,6 +43,7 @@ try {
         $bind->bindParam(':location', $location);
         $bind->bindParam(':tagged', $tagged);
         $bind->bindParam(':id', $id);
+        $bind->bindParam(':notes', $notes);
 
         if ($bind->execute()) {
             echo json_encode(['status' => 'success', 'message' => 'Event details updated successfully']);
