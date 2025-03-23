@@ -79,7 +79,7 @@ function fetchEventDetails(eventId) {
         "Location: " + eventDetails[0].location;
       document.getElementById("eventCategory").innerHTML =
         "Category: " + eventDetails[0].category;
-      document.getElementById("eventCost").src =
+      document.getElementById("eventCost").innerHTML =
         "Cost: " + eventDetails[0].cost;
 
       document.getElementById("lon_lat").innerHTML =
