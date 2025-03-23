@@ -80,7 +80,7 @@ function fetchEventDetails(eventId) {
       document.getElementById("eventCategory").innerHTML =
         "Category: " + eventDetails[0].category;
       document.getElementById("eventCost").innerHTML =
-        "Cost: " + eventDetails[0].cost;
+        "Cost: $" + eventDetails[0].cost;
 
       document.getElementById("lon_lat").innerHTML =
         "Longitude: " + eventDetails[0].lon_lat;
@@ -99,6 +99,8 @@ document.getElementById("getWeather").addEventListener("click", getWeather);
 async function getWeather() {
   document.getElementById("weather").innerHTML = "";
   document.getElementById("weather").style.display = "block";
+  document.getElementById("weather").innerHTML =
+    "<h2> Current Weather Info</h2>";
 
   var apiKey = "69b9fe24c1ed2aee705d6f960fa76b25";
 
