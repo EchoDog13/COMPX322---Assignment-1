@@ -1,7 +1,8 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
+//Connect to the database
 include 'connectdb.php'; // Include the PDO connection
 
 try {
@@ -33,6 +34,7 @@ try {
             tagged = :tagged
             WHERE id = :id";
 
+        //Binging variables to the prepared statement to alow for speical characters and prevent SQL injection
         $bind = $con->prepare($sql);
         $bind->bindParam(':name', $name);
         $bind->bindParam(':lon_lat', $lat_long);
@@ -45,6 +47,7 @@ try {
         $bind->bindParam(':id', $id);
         $bind->bindParam(':notes', $notes);
 
+        // Execute the query
         if ($bind->execute()) {
             echo json_encode(['status' => 'success', 'message' => 'Event details updated successfully']);
         } else {

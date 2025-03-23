@@ -192,11 +192,14 @@ function saveEvent() {
 
   // Send the updated event details to the server
   var eventUpdate = new XMLHttpRequest();
+  // Open a POST request to the saveEventDetails.php file
   eventUpdate.open("POST", "saveEventDetails.php", true);
+  // Set the request header
   eventUpdate.setRequestHeader(
     "Content-Type",
     "application/json;charset=UTF-8"
   );
+  // Send the updated event details as a JSON string
   eventUpdate.send(JSON.stringify(updatedEvent));
   // Update current detials with the new details
   eventUpdate.onreadystatechange = function () {
